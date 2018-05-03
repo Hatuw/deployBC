@@ -1,0 +1,3 @@
+[submodule "hyperledger/caliper"]
+	path = hyperledger/caliper
+	url = https://github.com/Hatuw/caliper
