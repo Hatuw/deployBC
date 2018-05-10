@@ -134,4 +134,6 @@ This project is used to deploy some blockchain(ethereum, hyperledger.ect)
 
 
 ### Reference
+- [hyperledger](http://hyperledger-fabric.readthedocs.io/en/release-1.1)
+- [caliper](https://github.com/hyperledger/caliper)
 - [docker-py 文档](https://docker-py.readthedocs.io/en/latest/containers.html)
