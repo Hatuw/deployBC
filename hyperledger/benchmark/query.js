@@ -6,10 +6,10 @@ module.exports.info  = 'querying accounts';
 let bc, contx;
 let accounts;
 module.exports.init = function(blockchain, context, args) {
-    const open = require('./open.js');
+    let acc = require('./simpleOperations.js');
     bc       = blockchain;
     contx    = context;
-    accounts = open.accounts;
+    accounts = acc.account_array;
     return Promise.resolve();
 };
 
