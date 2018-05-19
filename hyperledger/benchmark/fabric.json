@@ -93,7 +93,8 @@
       "open": "mychannel",
       "query": "mychannel",
       "transfer": "mychannel",
-      "delete": "mychannel"
+      "delete": "mychannel",
+      "simpleOperations": "mychannel"
     }
   },
   "info" : {

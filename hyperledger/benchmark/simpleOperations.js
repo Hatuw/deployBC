@@ -1,6 +1,6 @@
 'use strict';
 
-module.exports.info  = 'simple_operations';
+module.exports.info  = 'simple operations';
 
 let bc, contx;
 let no_accounts=0;
@@ -22,7 +22,7 @@ function generateAccount() {
     }
     let count = account_array.length+1;
     let num = prefix.toString() + count.toString();
-    return parseInt(num);
+    return parseInt(num).toString();
 }
 
 /**
@@ -51,9 +51,9 @@ function generateWorkload() {
         let acc_id = generateAccount();
         account_array.push(acc_id);
         let acc = {
-            'verb': 'open'
+            'verb': 'open',
             'account': acc_id,
-            'money': initial_balance
+            'money': initial_balance.toString()
         };
         workload.push(acc);
     }
@@ -72,7 +72,7 @@ function generateWorkload() {
             case 'query': {
                 op_payload = {
                     'verb': 'query',
-                    'accout': random_acc
+                    'account': random_acc
                 };
                 break;
             }
@@ -83,10 +83,10 @@ function generateWorkload() {
                     source_customer_id = account_array[Math.floor(Math.random() * account_array.length)];
                 }
                 op_payload = {
-                    'verb': 'transfer'
-                    'accout1': dest_customer_id,
-                    'accout2': source_customer_id,
-                    'money': amount
+                    'verb': 'transfer',
+                    'account1': dest_customer_id,
+                    'account2': source_customer_id,
+                    'money': amount.toString()
                 };
                 break;
             }
@@ -118,7 +118,7 @@ module.exports.init = function(blockchain, context, args) {
 };
 
 module.exports.run = function() {
-    let args = generateWorkload();
+    let args = generateWorkload()[0];
     return bc.invokeSmartContract(contx, 'simple', 'v0', args, 30);
 };
 
