@@ -97,17 +97,20 @@ def main():
     docker_client = client.client
     containers = docker_client.containers.list()
 
-    for _ in range(5):
-        for item in containers:
-            # print(item.attrs['Name'])
-            # client.collect_logs(item)
-            # use threading to reduce waiting time
-            t = Thread(
-                target=client.get_stats,
-                args=(item, ),
-                kwargs={'save': True})
-            t.start()
-        time.sleep(1)
+    for item in containers:
+        client.collect_logs(item)
+
+    # for _ in range(5):
+    #     for item in containers:
+    #         # print(item.attrs['Name'])
+
+    #         # use threading to reduce waiting time
+    #         t = Thread(
+    #             target=client.get_stats,
+    #             args=(item, ),
+    #             kwargs={'save': True})
+    #         t.start()
+    #     time.sleep(1)
 
 
 if __name__ == '__main__':
