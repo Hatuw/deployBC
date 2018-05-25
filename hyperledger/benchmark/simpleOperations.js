@@ -119,7 +119,8 @@ module.exports.init = function(blockchain, context, args) {
 
 module.exports.run = function() {
     let args = generateWorkload()[0];
-    return bc.invokeSmartContract(contx, 'simple', 'v0', args, 30);
+    // return bc.invokeSmartContract(contx, 'simple', 'v0', args, 30);
+    return bc.invokeSmartContract(contx, 'simple', 'v0', args, 200);
 };
 
 module.exports.end = function(results) {
