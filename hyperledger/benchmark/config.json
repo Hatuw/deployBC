@@ -4,7 +4,7 @@
     "config": "benchmark/mybench/fabric.json"
   },
   "command" : {
-    "start": "docker-compose -f benchmark/mybench/docker-compose.yaml up -d"
+    "start": "docker-compose -f network/fabric/simplenetwork/docker-compose.yaml up -d"
   },
   "test": {
     "name": "simple",
