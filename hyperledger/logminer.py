@@ -24,11 +24,20 @@ def filter_logs(src_log, out_name='./logs/filter.log'):
             f_out.write(item)
     return True
 
+filter_logs(src_log=log_file)
+
 with open(out_log, 'r') as logs_in:
     logs_data = []
     for line in logs_in.readlines():
         logs_data.append(line.strip())
 
 
-for i in range(5):
-    print(logs_data[i])
+for item in logs_data[1500:2500]:
+    # print(item)
+    try:
+        ret = re.findall(r'(\[Start\].+\(.*\)|\[End\].+\(.*\))', item)[0]
+        time = re.findall(r'2018.+UTC', item)[0]
+        print(time, ret)
+    except Exception as e:
+        print(item, e)
+        continue
