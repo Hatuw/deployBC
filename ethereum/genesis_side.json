@@ -1,15 +1,14 @@
 {
     "config": {
-        "chainId": 666,
+        "chainId": 444,
         "homesteadBlock": 0,
         "eip155Block": 0,
         "eip158Block": 0,
         "byzantiumBlock": 1
-
     },
     "alloc"      : {},
     "coinbase"   : "0x0000000000000000000000000000000000000000",
-    "difficulty" : "0x100000",
+    "difficulty" : "0x10000",
     "extraData"  : "",
     "gasLimit"   : "0xffffffff",
     "nonce"      : "0x0000000000000042",
